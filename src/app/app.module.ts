@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
+import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import {
   NbChatModule,
@@ -22,7 +23,11 @@ import {
 } from '@nebular/theme';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
+
+
 @NgModule({
+  
+  
   declarations: [AppComponent, LandingPageComponent],
   imports: [
     BrowserModule,
@@ -40,7 +45,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {
